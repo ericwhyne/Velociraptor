@@ -1,0 +1,3 @@
+*.zip
+/lib/ec2-api-tools*
+temp
