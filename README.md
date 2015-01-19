@@ -63,7 +63,8 @@ If you plan on seriously using this, please contact me so we can coordinate a st
 ## Notes
 
 In some places the program uses base64 encoding of the url as a filename. The recommendations in [RFC 3548](https://tools.ietf.org/html/rfc3548) were adhered to in order to make those encodings safe to
-store on a Linux filesystem. Basically you just replace / character with the underscore _ and the + character with the minus - to be linux filename safe.
+store on a Linux filesystem. Basically you just replace / character with the underscore _ and the + character with the minus - character. If you want to decode the filenames to the
+urls, use tools that adhere to this RFC or do the simple transform on your own prior to decoding. 
 
 ## License
 
