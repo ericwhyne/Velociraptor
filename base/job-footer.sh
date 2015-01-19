@@ -28,7 +28,7 @@ tar -zcf $warcgz $warcdir
 
 # Ship off the results to the collector
 #TODO: make this all write to s3
-echo aws s3 cp --region $s3_bucket_region $logfile $s3_bucket >> /test-s3.txt
+aws s3 cp --region $s3_bucket_region $logfile $s3_bucket >> /test-s3.txt
 aws s3 cp --region $s3_bucket_region $fetchfile $s3_bucket
 aws s3 cp --region $s3_bucket_region $urlfile $s3_bucket
 aws s3 cp --region $s3_bucket_region $warcgz $s3_bucket
