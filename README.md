@@ -4,11 +4,17 @@
 Velociraptor takes a list of urls and launches parallel AWS EC2 instances which then run wget in parallel to fetch the html and images into Web Archive .warc files and store them in an S3 Bucket.
 Parallelism is managed by GNU Parallel and AWS is managed by AWS CLI. This project is not associated with AWS and may use other cloud service providers in the future.
 
+Further reading:
+* [Warc](http://en.wikipedia.org/wiki/Web_ARChive)
+* [Warc Tools from the Internet Archive](https://github.com/internetarchive/warc)
+* [GNU Parallel](http://www.gnu.org/software/parallel/)
+* [AWS Command Line Interface](http://aws.amazon.com/cli/)
+
 # Velociraptor Quickstart:
 
 You'll need an [Amazon AWS account](http://aws.amazon.com/) to us this software for the moment.
 
-Velociraptor uses one configuration file. Modify example.cfg as you complete the following items and save it with a descriptive name for your job.
+Velociraptor uses one configuration file. Modify example.cfg as you complete the following steps and save it with a descriptive name for your job.
 
 Go to the AWS EC2 interface and create a keypair. Save the keyname.pem to your ~/.ssh/ directory and chmod 600.
 Then, fix the following two options in the configuration file:
