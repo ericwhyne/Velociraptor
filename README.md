@@ -60,6 +60,11 @@ aws s3 ls s3://yourbucket-identifier/
 This project is currently alpha and will probably continue to change quickly for a while.
 If you plan on seriously using this, please contact me so we can coordinate a stable branch.
 
+## Notes
+
+In some places the program uses base64 encoding of the url as a filename. The recommendations in [RFC 3548](https://tools.ietf.org/html/rfc3548) were adhered to in order to make those encodings safe to
+store on a Linux filesystem. Basically you just replace / character with the underscore _ and the + character with the minus - to be linux filename safe.
+
 ## License
 
 Copyright (c) 2015, Eric Whyne
