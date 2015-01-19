@@ -1,4 +1,6 @@
 #!/bin/bash
-cd lib
-wget http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip
-unzip ec2-api-tools.zip
+
+# Install the aws cli tools to interact with S3
+sudo pip install awscli
+aws configure
+

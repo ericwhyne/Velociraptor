@@ -1,0 +1,92 @@
+{
+  "OwnerId": "640475028676",
+  "ReservationId": "r-d8050f36",
+  "Groups": [],
+  "Instances": [
+    {
+      "Monitoring": {
+        "State": "disabled"
+      },
+      "PublicDnsName": null,
+      "KernelId": "aki-919dcaf8",
+      "State": {
+        "Code": 0,
+        "Name": "pending"
+      },
+      "EbsOptimized": false,
+      "LaunchTime": "2015-01-19T01:57:25.000Z",
+      "PrivateIpAddress": "172.31.44.189",
+      "ProductCodes": [],
+      "VpcId": "vpc-01925664",
+      "StateTransitionReason": null,
+      "InstanceId": "i-31d207c0",
+      "ImageId": "ami-34dea15c",
+      "PrivateDnsName": "ip-172-31-44-189.ec2.internal",
+      "KeyName": "velociraptor",
+      "SecurityGroups": [
+        {
+          "GroupName": "default",
+          "GroupId": "sg-edba0888"
+        }
+      ],
+      "ClientToken": null,
+      "SubnetId": "subnet-97e1b9bf",
+      "InstanceType": "t1.micro",
+      "NetworkInterfaces": [
+        {
+          "Status": "in-use",
+          "MacAddress": "12:f6:5b:58:8c:32",
+          "SourceDestCheck": true,
+          "VpcId": "vpc-01925664",
+          "Description": null,
+          "NetworkInterfaceId": "eni-30a8761d",
+          "PrivateIpAddresses": [
+            {
+              "PrivateDnsName": "ip-172-31-44-189.ec2.internal",
+              "Primary": true,
+              "PrivateIpAddress": "172.31.44.189"
+            }
+          ],
+          "PrivateDnsName": "ip-172-31-44-189.ec2.internal",
+          "Attachment": {
+            "Status": "attaching",
+            "DeviceIndex": 0,
+            "DeleteOnTermination": true,
+            "AttachmentId": "eni-attach-54383129",
+            "AttachTime": "2015-01-19T01:57:25.000Z"
+          },
+          "Groups": [
+            {
+              "GroupName": "default",
+              "GroupId": "sg-edba0888"
+            }
+          ],
+          "SubnetId": "subnet-97e1b9bf",
+          "OwnerId": "640475028676",
+          "PrivateIpAddress": "172.31.44.189"
+        }
+      ],
+      "SourceDestCheck": true,
+      "Placement": {
+        "Tenancy": "default",
+        "GroupName": null,
+        "AvailabilityZone": "us-east-1b"
+      },
+      "Hypervisor": "xen",
+      "BlockDeviceMappings": [],
+      "Architecture": "x86_64",
+      "StateReason": {
+        "Message": "pending",
+        "Code": "pending"
+      },
+      "IamInstanceProfile": {
+        "Id": "AIPAJIXS7DHCTP5BFGVNW",
+        "Arn": "arn:aws:iam::640475028676:instance-profile/velociraptor"
+      },
+      "RootDeviceName": "/dev/sda1",
+      "VirtualizationType": "paravirtual",
+      "RootDeviceType": "ebs",
+      "AmiLaunchIndex": 0
+    }
+  ]
+}

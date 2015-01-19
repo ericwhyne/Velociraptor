@@ -1,0 +1,21 @@
+#!/bin/bash
+# https://github.com/ericwhyne/Velociraptor
+if [ "$1" == "-h" ]; then
+  echo "Usage: `basename $0` <config_file>"
+  exit 0
+fi
+
+config_file=$1
+echo "Using config file: $config_file"
+source $config_file
+
+# Convert urls to jobs
+# Usage: urls2jobs listofurls.txt <number_of_instances>  keyfile.pem s3://s3-bucket
+echo "Building jobs."
+cd base
+./urls2jobs.sh $urls_file $number_ec2_instances $s3_bucket $s3_bucket_region
+
+# usage: runjob jobfile.sh aws_key_file worker_key_pair_name ec2_image instance_role
+echo ./runjob.sh job.sh $worker_key_pair_name $ec2_image $instance_role $availability_zone
+
+# Run the jobs

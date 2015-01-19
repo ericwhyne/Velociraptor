@@ -11,7 +11,7 @@ echo "Velociraptor ran on $date" > $logfile
 
 mkdir -p $warcdir
 
-tail -n 1  $0 | sed 's/^#//' | base64 -d > $urlfile # unpack the payload
+tail -n 1  $0 | sed 's/^#//' | base64 -d | gunzip > $urlfile # unpack the payload
 
 cat $urlfile | while read url
 do
@@ -27,12 +27,12 @@ parallel ::: < $fetchfile
 tar -zcf $warcgz $warcdir
 
 # Ship off the results to the collector
-echo $collector_key | base64 -d > /key.pem
-chmod 600 /key.pem
-scp -o StrictHostKeyChecking=no -i /key.pem $logfile ubuntu@$collector_ip:~/
-scp -o StrictHostKeyChecking=no -i /key.pem $fetchfile ubuntu@$collector_ip:~/
-scp -o StrictHostKeyChecking=no -i /key.pem $urlfile ubuntu@$collector_ip:~/
-scp -o StrictHostKeyChecking=no -i /key.pem $warcgz ubuntu@$collector_ip:~/
+#TODO: make this all write to s3
+echo aws s3 cp --region $s3_bucket_region $logfile $s3_bucket >> /test-s3.txt
+aws s3 cp --region $s3_bucket_region $fetchfile $s3_bucket
+aws s3 cp --region $s3_bucket_region $urlfile $s3_bucket
+aws s3 cp --region $s3_bucket_region $warcgz $s3_bucket
+
 
 halt #on halt the instance will be terminated
 #data payload is the last line of this file:

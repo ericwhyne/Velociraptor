@@ -1,3 +1,4 @@
 *.zip
 /lib/ec2-api-tools*
-temp
+base/temp
+base/jobs

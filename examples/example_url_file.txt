@@ -1,0 +1,3 @@
+"http://notarealdomain.somewhere.com/example1"
+"http://anotherfakedomain.somewhereelse.com/example2/"
+"http://morefakeexamples.org/?id=27020271"
