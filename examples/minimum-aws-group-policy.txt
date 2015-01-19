@@ -1,0 +1,20 @@
+{
+"Version": "2012-10-17",
+"Statement": [
+    {
+     "Action": [
+        "elasticmapreduce:*",
+        "ec2:*",
+        "cloudwatch:*",
+        "s3:*",
+        "sdb:*",
+        "iam:AddRoleToInstanceProfile",
+        "iam:PassRole",
+        "iam:GetInstanceProfile",
+        "iam:GetRole"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
