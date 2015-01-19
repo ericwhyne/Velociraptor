@@ -13,9 +13,11 @@ source $config_file
 # Usage: urls2jobs listofurls.txt <number_of_instances>  keyfile.pem s3://s3-bucket
 echo "Building jobs."
 cd base
-./urls2jobs.sh $urls_file $number_ec2_instances $s3_bucket $s3_bucket_region
+./urls2jobs.sh $urls_file $number_ec2_instances $s3_bucket $s3_bucket_region $tempdir
 
 # usage: runjob jobfile.sh aws_key_file worker_key_pair_name ec2_image instance_role
-echo ./runjob.sh job.sh $worker_key_pair_name $ec2_image $instance_role $availability_zone
-
+for jobfile in jobs/job-sublist-*
+do
+  ./runjob.sh $jobfile $worker_key_pair_name $ec2_image $instance_role $availability_zone
+done
 # Run the jobs

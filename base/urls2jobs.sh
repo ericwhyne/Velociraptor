@@ -4,6 +4,7 @@ list_of_urls=$1
 num_instances=$2
 s3_bucket=$3
 s3_bucket_region=$4
+tempdir=$5
 
 mkdir -p temp
 rm -f temp/*
