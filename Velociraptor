@@ -18,6 +18,9 @@ echo "Building jobs."
 cd base
 ./urls2jobs.sh $urls_file $number_ec2_instances $s3_bucket $s3_bucket_region $tempdir
 
+#TODO: remove this debug line
+exit 0
+
 # usage: runjob jobfile.sh aws_key_file worker_key_pair_name ec2_image instance_role
 for jobfile in $tempdir/jobs/job-sublist-*
 do

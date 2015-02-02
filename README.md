@@ -27,6 +27,8 @@ Go to the AWS S3 interface and create a bucket. This is where your results will 
 
 Use the AWS IAM interface to describe the permissions the nodes will run at. The role you create for your worker
 nodes needs to be able to write to the bucket you created above, nothing else. The default "data-pipeline" role works.
+Please be aware that there might be a bug in AWS's role creation software. Sometimes it fails at providing the Instance Profile ARN.
+Here is a picture explaining what to look for, if it fails just try again.
 Fix the following option in the config file with whatever you named  your role:
 * instance_role="velociraptor"
 
@@ -64,7 +66,7 @@ If you plan on seriously using this, please contact me so we can coordinate a st
 
 In some places the program uses base64 encoding of the url as a filename. The recommendations in [RFC 3548](https://tools.ietf.org/html/rfc3548) were adhered to in order to make those encodings safe to
 store on a Linux filesystem. Basically you just replace / character with the underscore _ and the + character with the minus - character. If you want to decode the filenames to the
-urls, use tools that adhere to this RFC or do the simple transform on your own prior to decoding. 
+urls, use tools that adhere to this RFC or do the simple transform on your own prior to decoding.
 
 ## License
 

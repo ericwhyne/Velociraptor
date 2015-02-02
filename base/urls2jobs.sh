@@ -8,8 +8,8 @@ tempdir=$5
 
 mkdir -p $tempdir/split
 #TODO: cat $list_of_urls | sort | uniq | shuf |
-split -n $num_instances $list_of_urls $tempdir/split/sublist-
-
+#split -n $num_instances $list_of_urls $tempdir/split/sublist-
+split -l $((`wc -l < $list_of_urls`/$num_instances)) $list_of_urls $tempdir/split/sublist-
 mkdir -p $tempdir/jobs
 
 for file in $tempdir/split/sublist-*
