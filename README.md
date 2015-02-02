@@ -27,8 +27,9 @@ Go to the AWS S3 interface and create a bucket. This is where your results will 
 
 Use the AWS IAM interface to describe the permissions the nodes will run at. The role you create for your worker
 nodes needs to be able to write to the bucket you created above, nothing else. The default "data-pipeline" role works.
-Please be aware that there might be a bug in AWS's role creation software. Sometimes it fails at providing the Instance Profile ARN.
-Here is a picture explaining what to look for, if it fails just try again.
+Please be aware that there might be a problem in AWS's role creation software. It seems that sometimes it fails at providing the Instance Profile ARN.
+[Here](https://raw.githubusercontent.com/ericwhyne/Velociraptor/master/examples/awsarnproblem.png) is a picture explaining what to look for, if it fails just try creating it again.
+The Amazon documentation: [Using IAM Roles to Delegate Permissions to Applications that Run on Amazon EC2](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-ec2instance.html)
 Fix the following option in the config file with whatever you named  your role:
 * instance_role="velociraptor"
 
